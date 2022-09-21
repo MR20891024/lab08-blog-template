@@ -25,6 +25,9 @@ class Post extends React.Component {
       });
     };
 
+    const deleteThisPost = () => {
+      this.props.deletePost(this.props.post.id);
+    };
     // TODO Section 8: Add code for delete
 
     if(this.state.editing) {
@@ -43,6 +46,7 @@ class Post extends React.Component {
       <PostView
         post={this.props.post}
         time={this.props.time}
+        onDelete={deleteThisPost}
         onEdit={openEdit}
       />
     );
